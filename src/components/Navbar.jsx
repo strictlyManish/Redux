@@ -13,9 +13,9 @@ const Navbar = () => {
 
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur-xs relative transition-all">
-      <h1 className="text-2xl">
-        Market<span className="text-orange-600 font-bold">Hub</span>{" "}
+    <nav className="flex fixed items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur-xs w-screen transition-all">
+      <h1 className="text-2xl bg-gray-700 p-2 rounded">
+        Market <span className="text-white bg-orange-500 font-bold rounded px-2">Hub</span>{" "}
       </h1>
       {/* Desktop Menu */}
       <div className="hidden sm:flex items-center gap-8">

@@ -8,7 +8,7 @@ function Product() {
 
 
   return (
-    <div className='p-15 flex flex-wrap gap-2 justify-center'>
+    <div className=' p-20 flex flex-wrap gap-2 justify-center'>
       {products.map((obj)=>{
         return <Card key={obj.id} product={obj} />
       })}

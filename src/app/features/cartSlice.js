@@ -22,11 +22,16 @@ const CartReducers = createSlice({
     ],
   },
   reducers: {
-    addToCart: (state,action) => {
+    addToCart: (state, action) => {
       state.value.push(action.payload);
-      toast.success('Task Added')
+      toast.success("Task Added");
+    },
+    removeToCart: (state, action) => {
+     state.value =  state.value.filter((obj) => obj.id !== action.payload);
+      toast.success("Item removed");
+
     },
   },
 });
-export const { addToCart } = CartReducers.actions;
+export const { addToCart,removeToCart } = CartReducers.actions;
 export default CartReducers.reducer;
