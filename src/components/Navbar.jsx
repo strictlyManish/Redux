@@ -1,11 +1,22 @@
 import { Search, ShoppingBag } from "lucide-react";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const cartItems = useSelector((state) => state.cart.value);
+
+
+
+
+
+
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur-xs relative transition-all">
-      <h1 className="text-2xl">Market<span className="text-orange-600 font-bold">Hub</span> </h1>
+      <h1 className="text-2xl">
+        Market<span className="text-orange-600 font-bold">Hub</span>{" "}
+      </h1>
       {/* Desktop Menu */}
       <div className="hidden sm:flex items-center gap-8">
         <a href="#">Home</a>
@@ -22,12 +33,12 @@ const Navbar = () => {
           <Search />
         </div>
 
-        <div className="relative cursor-pointer">
+        <Link to={"/cart"} className="relative cursor-pointer">
           <ShoppingBag />
           <button className="absolute -top-2 -right-3 text-xs text-white bg-orange-500 w-4.5 h-4.5 rounded-full">
-            3
+            {cartItems.length}
           </button>
-        </div>
+        </Link>
 
         <button className="cursor-pointer px-8 py-2 bg-orange-500 hover:bg-orange-600 transition text-white rounded-full">
           Login
