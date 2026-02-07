@@ -11,23 +11,29 @@ const TaskReducres = createSlice({
         content:
           "Computers process data at incredible speeds, completing complex calculations in seconds that would take humans days or years. They also deliver highly accurate results when given correct input",
       },
-      
+      {
+        id: "x5f",
+        title: "computer",
+        content:
+          "Computers process data at incredible speeds, completing complex calculations in seconds that would take humans days or years. They also deliver highly accurate results when given correct input",
+      },
     ],
   },
   reducers: {
     addTask: (state, action) => {
-      state.tasks.push(action.payload)
-      toast.success('Task Created')
+      state.tasks.push(action.payload);
+      toast.success("Task Created");
     },
-    removeTask:(state,action)=>{
-      state.tasks = state.tasks.filter((obj)=> obj.id !== action.payload);
-      toast.success('Task removed')
+    editTask: (state, action) => {},
+    removeTask: (state, action) => {
+      state.tasks = state.tasks.filter((obj) => obj.id !== action.payload);
+      toast.success("Task removed");
     },
-    clearTask:(state,action)=>{
+    clearTask: (state, action) => {
       state.tasks = [];
-      toast.success('All Task Cleared')
-    }
+      toast.success("All Task Cleared");
+    },
   },
 });
-export const { addTask,clearTask,removeTask} = TaskReducres.actions;
+export const { addTask, clearTask, removeTask } = TaskReducres.actions;
 export default TaskReducres.reducer;

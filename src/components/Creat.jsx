@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addTask } from "../app/Features/taskSlice";
 import { nanoid } from "nanoid";
+import { CircleCheckBig } from "lucide-react";
 
 function Creat() {
   const {
@@ -50,9 +51,11 @@ function Creat() {
       <div className="flex items-center justify-between">
         <button
           type="submit"
-          className="my-3 bg-blue-500 py-2 px-5 rounded text-white font-medium"
+          className="my-3 flex items-center bg-blue-500 px-2 py-2 gap-2 rounded text-white font-medium"
         >
-          Add Task
+          <CircleCheckBig />
+          <p>Add Task</p>
+
         </button>
       </div>
     </form>
