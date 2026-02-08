@@ -1,9 +1,8 @@
 import { CircleArrowLeft } from "lucide-react";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { removeTask } from "../app/Features/taskSlice";
+import { removeTask, updateTask } from "../app/Features/taskSlice";
 
 function Edit() {
   const { id } = useParams();
@@ -23,8 +22,8 @@ function Edit() {
   const dispatch = useDispatch();
 
   const SumbitFrom = (data) => {
-    data.id = nanoid(5);
-    dispatch(addTask(data));
+    dispatch(updateTask(data));
+    navigate("/")
     reset();
   };
 

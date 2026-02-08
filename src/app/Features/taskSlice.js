@@ -72,7 +72,15 @@ const TaskReducres = createSlice({
       state.tasks.push(action.payload);
       toast.success("Task Created");
     },
-    editTask: (state, action) => {},
+
+    updateTask: (state, action) => {
+      state.tasks = state.tasks.map((task) =>
+        task.id === action.payload.id ? { ...task, ...action.payload } : task,
+      );
+
+      toast.success("Data Updated");
+    },
+
     removeTask: (state, action) => {
       state.tasks = state.tasks.filter((obj) => obj.id !== action.payload);
       toast.success("Task removed");
@@ -83,5 +91,6 @@ const TaskReducres = createSlice({
     },
   },
 });
-export const { addTask, clearTask, removeTask } = TaskReducres.actions;
+export const { addTask, clearTask, removeTask, updateTask } =
+  TaskReducres.actions;
 export default TaskReducres.reducer;
