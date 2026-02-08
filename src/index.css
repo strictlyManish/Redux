@@ -4,3 +4,9 @@
 *{
      font-family: "Quicksand", sans-serif;
 }
+
+html,body{
+     ::-webkit-scrollbar {
+           width: 10px;
+     }
+}

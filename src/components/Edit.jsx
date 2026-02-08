@@ -40,7 +40,7 @@ function Edit() {
         onClick={() => navigate("/")}
         className="cursor-pointer active:scale-95  px-2 py-2 flex gap-2 rounded-4xl"
       >
-        <CircleArrowLeft /> <p>back</p>
+        <CircleArrowLeft /> <p>Back</p>
       </button>
 
       <form

@@ -5,7 +5,7 @@ import Edit from "./components/Edit"
 
 function App() {
   return (
-    <div className="min-h-screen w-screen text-white bg-gray-800 px-15 py-10">
+    <div className="h-screen w-screen text-white bg-gray-800 px-15 py-10 overflow-hidden">
       <h1 className="font-extralight uppercase mb-6">Make Your Notes Easily</h1>
 
       <Routes>
